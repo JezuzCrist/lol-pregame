@@ -1,18 +1,26 @@
 express = require('express')
-fs = require('fs')
+# fs = require('fs')
 request = require('request')
-cheerio = require('cheerio')
+# cheerio = require('cheerio')
+lolapi = require './lolapi'
 app     = express()
 
 
 
 
 app.get('/scrape', (req, res)->
-
-  console.log "mekmek"
-  res.send({nohomo:false,homo:true})
+  lolapi.getSummnerIds()
 )
 
+
+app.get('/freeweek', (req, res)->
+	lolapi.getFreeWeekChampions((data)->
+		if data.error
+			res.send data.error
+		else
+			res.send data.data
+	)
+)
 
 app.get('/currentGameInfo', (req, res)->
 	
