@@ -6,10 +6,10 @@ lolapi = require './lolapi'
 app     = express()
 
 
-
-
-app.get('/scrape', (req, res)->
-  lolapi.getSummnerIds()
+app.get('/leagueInfo', (req, res)->
+  lolapi.getLeagueInfo((data)->
+  	res.send data
+  ,req.query.sn)
 )
 
 

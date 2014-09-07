@@ -2,11 +2,10 @@
   "name": "lol-pregame",
   "version": "0.0.0",
   "description": "will get data from lol and return in json format",
-  "main": "js/index.js",
+  "main": "js/server.js",
   "dependencies" : {
     "express"    : "latest",
-    "request"    : "latest",
-    "cheerio"    : "latest"
+    "request"    : "latest"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
